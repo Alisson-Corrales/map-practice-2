@@ -45,9 +45,11 @@ let students = ['Martin Pratt: 53%',
 'Todd Chadwick: 81%']
 
 for(let i in students){
-    students[i] = students[i].split(': ')
+    students[i] = students[i].split('%').join("").split(': ')
 }
 //console.log(students)
+
+
 
 
 //1. Take the list I gave you in the input and break it down into an array like usual then use the proper methods to pass that array into a map named studentGrades.
@@ -55,50 +57,52 @@ for(let i in students){
 let studentGrades = new Map(students);
 
 
-// ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ //
+// 🍄 ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ 🍄 //
 
 
 //2. Using map methods on studentGrades only, tell me how many students are in the class and print out to console all of the students’ names.
-console.log(studentGrades.size)
-for(let names of studentGrades.keys()){
+//console.log(studentGrades.size)
+/*for(let names of studentGrades.keys()){
     console.log(names)
-}
+}*/
 
 
-// ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ //
+// 🍄 ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ 🍄 //
 
 
 //3. Using map methods please add the following student - grade pairs to the map
-studentGrades.set('Isobella Moyer', '95%');
-studentGrades.set('Star Mcdougall', '56%');
-studentGrades.set('Blade Lennon', '72%');
-studentGrades.set('Karishma Molloy', '92%');
-studentGrades.set('Gregor Garner', '63%');
-studentGrades.set('Alec Peterson', '100%');
-studentGrades.set('Letitia Benitez', '67%');
-studentGrades.set('Elicia Hoover', '55%');
+studentGrades.set('Isobella Moyer', '95');
+studentGrades.set('Star Mcdougall', '56');
+studentGrades.set('Blade Lennon', '72');
+studentGrades.set('Karishma Molloy', '92');
+studentGrades.set('Gregor Garner', '63');
+studentGrades.set('Alec Peterson', '100');
+studentGrades.set('Letitia Benitez', '67');
+studentGrades.set('Elicia Hoover', '55');
 
 
-// ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ //
+// 🍄 ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ 🍄 //
 
 
 //4. Using map methods please loop through every grade and tell me the average grade in the class. 
-for(let grades of studentGrades.values()){
-    let total = grades.size;
-    let totalSeries = (total*(total + 1)/total)/2;
-    let average = totalSeries/total;
-    console.log(average)
+let totalSeries = 0
+//goes through all the values of studentGrades
+for(let grade of studentGrades.values()){
+    //adds what's saved to grade which is also adding
+    //plus sign makes it into a number
+    totalSeries += +grade
 }
+console.log(totalSeries/50)
 
 
-// ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ //
+// 🍄 ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ 🍄 //
 
 
 //5. Using map methods as much as possible please go through and remove the top 4 grades and bottom 4 grades
 
 
 
-// ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ //
+// 🍄 ✧･ﾟ: *✧･ﾟ:* q. *:･ﾟ✧*:･ﾟ✧ 🍄 //
 
 
 //6. Console.log every entry in the map using only map methods
